@@ -1,16 +1,21 @@
 import './container.scss';
 import {TodoMock} from "../../mock/todo.mock";
 import {Todo} from "../../components/todo/todo";
+import {createAddBtn, createClearBtn} from "../../components";
 
 export function homePage() {
-    const element = document.createElement('div');
+    const todosContainer = document.createElement('div');
+    todosContainer.classList.add('container');
+
+    todosContainer.appendChild(createAddBtn());
+    todosContainer.appendChild(createClearBtn());
 
     TodoMock.forEach(todo => {
         const todoObj = new Todo(todo);
-        element.appendChild(todoObj.getHtmlElement());
+        todosContainer.appendChild(todoObj.getHtmlElement());
     });
 
-    return element;
+    return todosContainer;
 }
 
 document.body.appendChild(homePage());

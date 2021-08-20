@@ -10,7 +10,7 @@ function onAddBtnClick() {
     }
 }
 
-function createAddBtn() {
+export function createAddBtn() {
     const btn = document.createElement('button');
 
     btn.classList.add('btn');
@@ -28,7 +28,7 @@ function onClearBtnClick() {
     label.innerText = 'Cleared';
 }
 
-function createClearBtn() {
+export function createClearBtn() {
     const btn = document.createElement('button');
 
     btn.classList.add('btn', 'clear');
@@ -38,6 +38,3 @@ function createClearBtn() {
 
     return btn;
 }
-
-document.body.appendChild(createAddBtn());
-document.body.appendChild(createClearBtn());
