@@ -8,8 +8,6 @@ export function homePage() {
     todosContainer.classList.add('container');
 
     const addBtn = new Button('Add', 'primary');
-    const deleteBtn = new Button('Delete All', 'danger');
-
     todosContainer.appendChild(addBtn.getHtmlElement());
 
     TodoMock.forEach(todo => {
@@ -17,6 +15,7 @@ export function homePage() {
         todosContainer.appendChild(todoObj.getHtmlElement());
     });
 
+    const deleteBtn = new Button('Delete All', 'danger');
     todosContainer.appendChild(deleteBtn.getHtmlElement());
 
     return todosContainer;
