@@ -2,6 +2,7 @@ import './container.scss';
 import {TodoMock} from "../../mock/todo.mock";
 import {Todo} from "../../components/todo/todo";
 import {Button} from "../../components/button/button";
+import {ContainerDialog} from "../../dialogs/container/container.dialog";
 
 export function homePage() {
     const todosContainer = document.createElement('div');
@@ -9,6 +10,12 @@ export function homePage() {
 
     const addBtn = new Button('Add', 'primary');
     todosContainer.appendChild(addBtn.getHtmlElement());
+
+    const dialogContainer = new ContainerDialog();
+
+    addBtn.getHtmlElement().addEventListener('click', () => {
+        dialogContainer.showDialog();
+    })
 
     TodoMock.forEach(todo => {
         const todoObj = new Todo(todo);
