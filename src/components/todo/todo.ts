@@ -1,3 +1,5 @@
+import './todo.scss';
+
 import {createLabel} from "../label/label";
 import {ITodo} from "../../interfaces/todo.interface";
 import {Button} from "../button/button";
@@ -14,11 +16,15 @@ export class Todo {
     }
 
     private addButtons(): void {
+        const actionsContainer = document.createElement('div');
+        actionsContainer.classList.add('actions');
+        this.container.appendChild(actionsContainer);
+
         const completeBtn = new Button('Done');
         const deleteBtn = new Button('Remove', 'danger');
 
-        this.container.appendChild(deleteBtn.getHtmlElement());
-        this.container.appendChild(completeBtn.getHtmlElement());
+        actionsContainer.appendChild(deleteBtn.getHtmlElement());
+        actionsContainer.appendChild(completeBtn.getHtmlElement());
     }
 
     private addLabel(label: string): void {
