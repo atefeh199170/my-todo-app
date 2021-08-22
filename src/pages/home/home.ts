@@ -11,12 +11,13 @@ export function homePage() {
     const deleteBtn = new Button('Delete All', 'danger');
 
     todosContainer.appendChild(addBtn.getHtmlElement());
-    todosContainer.appendChild(deleteBtn.getHtmlElement());
 
     TodoMock.forEach(todo => {
         const todoObj = new Todo(todo);
         todosContainer.appendChild(todoObj.getHtmlElement());
     });
+
+    todosContainer.appendChild(deleteBtn.getHtmlElement());
 
     return todosContainer;
 }

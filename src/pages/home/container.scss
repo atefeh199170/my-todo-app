@@ -6,4 +6,9 @@
   padding: 25px;
   border-radius: 5px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, .1);
+
+  & .danger {
+    width: 100%;
+    padding: 9px;
+  }
 }
