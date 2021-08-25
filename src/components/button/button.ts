@@ -1,3 +1,5 @@
+import './btn.scss';
+
 export class Button {
     private readonly btn: HTMLButtonElement;
 
