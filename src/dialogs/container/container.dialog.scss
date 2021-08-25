@@ -1,0 +1,28 @@
+@mixin fitTheScreen($position) {
+  position: $position;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+.dialog-wrapper {
+  @include fitTheScreen(fixed);
+}
+
+.backdrop {
+  background-color: rgba(0,0,0,.4);
+  z-index: 2;
+  @include fitTheScreen(absolute);
+}
+
+.dialog-container {
+  z-index: 3;
+
+  width: fit-content;
+  height: fit-content;
+}
