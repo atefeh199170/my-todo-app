@@ -1,10 +1,12 @@
 import './textarea.scss';
 
-function createAddTextarea() {
-    const textarea = document.createElement('textarea');
+export function Textarea(placeHolder:string, row: number, maxlength:number):HTMLTextAreaElement {
+    const textareaEl = document.createElement('textarea');
+    textareaEl.classList.add('textarea');
+    textareaEl.placeholder = placeHolder;
+    textareaEl.rows = row;
 
-    textarea.classList.add('textarea');
-    return textarea;
+    return textareaEl;
 }
 
-document.body.appendChild(createAddTextarea());
+
